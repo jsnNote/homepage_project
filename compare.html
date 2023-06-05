@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>리눅스 서버 운영 프로젝트</title>
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/compare.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+  </head>
+  <body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" style="font-size: 36px" href="index.html">서버</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar__menu navbar-nav ms-auto py-4 py-lg-0">
+            <li class="navbar__menu__item nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">
+                <span class="menu__text">소개</span>
+              </a>
+            </li>
+            <li class="navbar__menu__item nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">
+                <span class="menu__text">서버란?</span>
+              </a>
+            </li>
+            <li class="navbar__menu__item nav-item" style="width: 20%">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">
+                <span class="menu__text">서버종류</span>
+              </a>
+              <ul>
+                <li class="nav-item navbar__menu__item">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="webserver.html">웹서버</a>
+                </li>
+                <li class="nav-item navbar__menu__item">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">apache vs nginx</a>
+                </li>
+                <li class="nav-item navbar__menu__item">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">서버 배포 방식</a>
+                </li>
+              </ul>
+            </li>
+            <li class="navbar__menu__item nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">
+                <span class="menu__text">서버의 사용 사례</span>
+              </a>
+            </li>
+            <li class="navbar__menu__item nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">
+                <span class="menu__text">왜 리눅스일까?</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="masthead" style="background-image: url('assets/img/apache_nginx.png')">
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="post-heading">
+              <h1>Apache vs Nginx</h1>
+              <h2 class="subheading pt-2 fs-4">웹 서버 소프트웨어</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <article class="mb-4">
+      <div class="px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center m-1">
+          <div class="col-md-10">
+            <div class="container position-relative kind">
+              <div class="section-heading text-center">웹 서버 소프트웨어의 종류</div>
+              <ul class="section-place display-flex justify-content-center">
+                <li>
+                  <div>
+                    <div class="kind-img">
+                      <img src="assets/img/apache-logo.png" alt="apache" />
+                    </div>
+                    <ul class="os">
+                      <li>Windows</li>
+                      <li>Linux</li>
+                      <li>macOS</li>
+                      <li style="width: 40px; text-align: center">...</li>
+                    </ul>
+                  </div>
+                  <ul class="kind__description">
+                    <li>아파치 소프트웨어 재단에서 관리하는 HTTP서 웹 서버 소프트웨어이다.</li>
+                    <li>Apache 서버는 다양한 모듈을 제공하고 있어 확장성이 좋다.</li>
+                    <li>
+                      Apache 서버 같은 경우 요청이 들어오면 connection(네트워크 통신에서
+                      클라이언트와 서버 간의 연결)을 생성한다. 그래서 새로운 요청이 들어올 때마다
+                      프로세스를 생성한다. 하지만 이 과정이 오래 걸리기 때문에 미리 만들어 놓은
+                      프로세스를 할당한다. 만약 만들어 놓은 게 없는 경우에는 추가로 프로세스를
+                      생성한다.
+                    </li>
+                    <li>
+                      Apache 서버의 문제점은 요청이 많아져서 서버에 동시에 연결된 connection이
+                      10000개 이상일 때 새로운 connection을 생성하지 못한다는 것이다.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div>
+                    <div class="kind-img">
+                      <img src="assets/img/Nginx-logo.png" alt="nginx" />
+                    </div>
+                    <ul class="os">
+                      <li>Windows</li>
+                      <li>Linux</li>
+                      <li>macOS</li>
+                      <li style="width: 40px; text-align: center">...</li>
+                    </ul>
+                  </div>
+                  <ul class="kind__description">
+                    <li>
+                      클라이언트로부터 요청을 받았을 때 요청에 맞는 정적 파일을 응답해주는 HTTP Web
+                      Server로 활용되기도 하고, 또는 Reverse Proxy Server로 활용하여 WAS의 부하를
+                      줄일 수 있는 로드밸런서 역할을 한다.
+                    </li>
+                    <li>NGINX는 아파치 서버의 구조적 한계를 극복하려고 제작되었다.</li>
+                    <li>
+                      한 개 또는 고정된 프로세스만 생성하고, 여러 개의 Connection을 모두
+                      Event-Handler(네트워크 이벤트 처리)를 통해 비동기 방식으로 처리한다. 그래서
+                      동시 접속자 수가 많아져도 추가적인 생성 비용이 들지 않는다.
+                    </li>
+                    <li>가볍다.</li>
+                    <li>모듈이 다양 하지 않다.</li>
+                  </ul>
+                </li>
+                <li>
+                  <div>
+                    <div class="kind-img">
+                      <img src="assets/img/IIS-logo.png" alt="IIS" />
+                    </div>
+                    <ul class="os">
+                      <li>Windows</li>
+                      <li>Windows server</li>
+                    </ul>
+                  </div>
+                  <ul class="kind__description">
+                    <li>Microsoft에서 지원하는 웹 서버 소프트웨어이다.</li>
+                    <li>간편한 GUI를 지원한다.</li>
+                    <li>FTP, SMTP, NNTP, HTTP/HTTPS포함한다.</li>
+                    <li>Apache와 Nginx에 비해 느리다.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="container position-relative compare d-flex flex-column align-items-center g-1;"
+            >
+              <div class="section-heading text-center">Apache vs Nginx</div>
+              <div class="section-place" style="width: 80%">
+                <div
+                  style="
+                    background: rgb(245, 235, 208);
+                    border-top-left-radius: 12px;
+                    border: 1px solid black;
+                    padding: 12px 24px;
+                  "
+                >
+                  Apache
+                </div>
+                <div
+                  style="
+                    background: rgb(245, 235, 208);
+                    border-top-right-radius: 12px;
+                    border: 1px solid black;
+                    padding: 12px 24px;
+                  "
+                >
+                  Nginx
+                </div>
+                <div style="border: 1px solid rgb(73, 73, 73); padding: 12px 24px">
+                  요청 당 스레드 또는 프로세스가 처리하는 구조
+                </div>
+                <div style="border: 1px solid rgb(73, 73, 73); padding: 12px 24px">
+                  비동기 이벤트 기반으로 요청
+                </div>
+                <div style="border: 1px solid rgb(73, 73, 73); padding: 12px 24px">
+                  CPU/메모리 자원 낭비 심함
+                </div>
+                <div style="border: 1px solid rgb(73, 73, 73); padding: 12px 24px">
+                  CPU/메모리 자원 사용률 낮음
+                </div>
+                <div style="border: 1px solid rgb(73, 73, 73); padding: 12px 24px">
+                  CPU/메모리 자원 사용률 낮음
+                </div>
+                <div style="border: 1px solid rgb(73, 73, 73); padding: 12px 24px">모듈이 적음</div>
+                <div style="border: 1px solid rgb(73, 73, 73); padding: 12px 24px">
+                  PHP 모듈 등 직접 적재 가능
+                </div>
+                <div style="border: 1px solid rgb(73, 73, 73); padding: 12px 24px">
+                  많은 접속자들 대응 가능
+                </div>
+                <div style="border: 1px solid rgb(73, 73, 73); padding: 12px 24px">
+                  안정성, 확장성, 호환성 우세
+                </div>
+                <div style="border: 1px solid rgb(73, 73, 73); padding: 12px 24px">성능 우세</div>
+                <div
+                  style="
+                    border: 1px solid rgb(73, 73, 73);
+                    padding: 12px 24px;
+                    border-bottom-left-radius: 12px;
+                  "
+                >
+                  동적 컨텐츠 단독 처리 가능
+                </div>
+                <div
+                  style="
+                    border: 1px solid rgb(73, 73, 73);
+                    padding: 12px 24px;
+                    border-bottom-right-radius: 12px;
+                  "
+                >
+                  동적 컨텐츠 단독 처리 불가능
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!-- Footer-->
+    <footer class="border-top">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <div class="small text-center text-muted fst-italic">
+              Copyright &copy; 리눅스 서버 운영 프로젝트 2023
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script defer>
+      // 줌아웃
+      document.body.style.zoom = 1 / 1.2;
+    </script>
+  </body>
+</html>

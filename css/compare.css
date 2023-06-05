@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+/* 웹 서버 소프트웨어의 종류 */
+.kind > .section-place > li {
+  display: flex;
+  box-shadow: 0px 9px 16px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 24px;
+  margin-bottom: 32px;
+}
+.kind > .section-place > li > div {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+}
+.kind > .section-place > li > div > div {
+  width: 80%;
+}
+.os {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.os > li {
+  background-color: rgb(48, 113, 235);
+  color: white;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+
+.kind-img > img {
+  width: 100%;
+  height: 100%;
+}
+.kind > .section-place > li > ul {
+  background-color: #353a3f;
+  border-radius: 0 24px 24px 0;
+  width: 100%;
+  color: white;
+}
+.kind__description {
+  padding: 18px 48px;
+}
+.kind__description > li {
+  padding: 12px 0;
+  letter-spacing: 1px;
+}
+.kind__description li {
+  list-style: square;
+}
+/* apache vs nginx */
+.compare .section-place {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
+}
+.compare .section-place > div {
+  text-align: center;
+}

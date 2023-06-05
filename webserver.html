@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>리눅스 서버 운영 프로젝트</title>
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/webserver.css" />
+    <script defer src="js/button.js"></script>
+  </head>
+  <body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" style="font-size: 36px" href="index.html">서버</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar__menu navbar-nav ms-auto py-4 py-lg-0">
+            <li class="navbar__menu__item nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">
+                <span class="menu__text">소개</span>
+              </a>
+            </li>
+            <li class="navbar__menu__item nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">
+                <span class="menu__text">서버란?</span>
+              </a>
+            </li>
+            <li class="navbar__menu__item nav-item" style="width: 20%">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">
+                <span class="menu__text">서버종류</span>
+              </a>
+              <ul>
+                <li class="nav-item navbar__menu__item">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">웹서버</a>
+                </li>
+                <li class="nav-item navbar__menu__item">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="compare.html">apache vs nginx</a>
+                </li>
+                <li class="nav-item navbar__menu__item">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">서버 배포 방식</a>
+                </li>
+              </ul>
+            </li>
+            <li class="navbar__menu__item nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">
+                <span class="menu__text">서버의 사용 사례</span>
+              </a>
+            </li>
+            <li class="navbar__menu__item nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="#">
+                <span class="menu__text">왜 리눅스일까?</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="masthead" style="background-image: url('assets/img/server.jpg')">
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="post-heading">
+              <h1>웹서버에 대해서</h1>
+              <h2 class="subheading pt-2 fs-4">일상과 가장 밀접한 서버</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <article class="mb-4">
+      <div class="px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center m-1">
+          <div class="col-md-10">
+            <div class="section-heading text-center">웹 서버란?</div>
+            <div class="container position-relative d-flex justify-content-center">
+              <div class="content d-flex align-items-center">
+                <div class="left" style="width: 60%; display: inline">
+                  <div class="gap-1 position-relative">
+                    <p style="gap: 10px; font-size: 1.5rem" class="d-flex fw-bold"></p>
+                    <div style="gap: 10px; font-size: 1.5rem" class="d-flex d-flex fw-bold">
+                      <i class="fas fa-book" style="font-size: 1.75rem"></i>
+                      <p style="margin: 0 0">정의</p>
+                    </div>
+                    <p style="margin: 10px 0 30px 0; padding: 0 100px 0 0">
+                      클라이언트(일반적으로 웹 브라우저)의 요청에 따라 웹 사이트의 콘텐츠를 제공하는
+                      서버이다.
+                    </p>
+                  </div>
+                  <div class="gap-1 position-relative">
+                    <div style="gap: 10px; font-size: 1.5rem" class="d-flex fw-bold">
+                      <i class="fas fa-star" style="font-size: 1.75rem"></i>
+                      <p style="margin: 0 0">특징</p>
+                    </div>
+                    <ul>
+                      <li class="description">항상 실행 중이다.</li>
+                      <li class="description">항상 인터넷과 연결되어 있다.</li>
+                      <li class="description">항상 같은 IP주소를 가지고 있다.</li>
+                      <li class="description">제 3자에 의해 유지보수된다.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="line"
+                  style="width: 0; height: 400px; border: 2px solid rgba(0, 0, 0, 0.3)"
+                ></div>
+                <div
+                  class="right d-flex justify-content-center align-items-center"
+                  style="display: inline; padding: 48px"
+                >
+                  <img src="assets/img/webserver_structure.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="container position-relative division">
+              <div class="section-heading text-center">웹 서버의 구분</div>
+              <div class="section-place display-flex justify-content-center">
+                <div class="inner-box">
+                  <div class="fw-bold">하드웨어 측면</div>
+                  <div>
+                    웹 서버는 웹 서버 소프트웨어(apache http, Nginx)와 웹 사이트의 컴포넌트 파일들을
+                    저장하는 물리적인 컴퓨터를 의미한다.
+                  </div>
+                  <div class="img"></div>
+                </div>
+                <div class="inner-box">
+                  <div class="display-flex flex-column align-items-center">
+                    <div class="fw-bold">소프트웨어 측면</div>
+                    <div>
+                      클라이언트로부터 HTTP 요청을 받아 요청을 분석하고 처리하여, 정적인
+                      컨텐츠(.html, 이미지, CSS, JavaScrip 파일 등)를 제공하는 컴퓨터 프로그램을
+                      의미한다. 사용자가 어떻게 호스트 파일들에 접근하는지를 관리한다.
+                    </div>
+                  </div>
+                  <div class="display-flex">
+                    <div class="img"></div>
+                    <div class="img"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container position-relative function">
+              <div class="section-heading text-center">웹 서버의 기능</div>
+              <div class="section-place">
+                <div class="fuction-text display-flex gap-1 p-4">
+                  <div class="fuction-number">1</div>
+                  <ul>
+                    <p class="fs-3 m-0 mb-2 fw-bold">정적인 컨텐츠 제공</p>
+                    <li class="description">
+                      웹 리소스들을 클라이언트로 전달하고, 클라이언트로부터 콘텐츠를 전달받아
+                      저장하거나 처리한다.
+                    </li>
+                    <li class="description">
+                      WAS(웹 애플리케이션 서버; 동적인 컨텐츠를 처리하는 서버)를 거치지 않고 바로
+                      자원을 제공한다.
+                    </li>
+                  </ul>
+                </div>
+                <div class="fuction-text display-flex gap-1 p-4">
+                  <div class="fuction-number">2</div>
+                  <ul>
+                    <p class="fs-3 m-0 mb-2 fw-bold">동적인 컨텐츠 제공</p>
+                    <li class="description">
+                      웹 서버는 동적인 컨텐츠를 자체적으로 처리하기 어렵다.
+                    </li>
+                    <li class="description">
+                      클라이언트의 요청을 WAS에 보내고, WAS가 처리한 결과를 클라이언트에게
+                      전달(응답)한다.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="container position-relative work">
+              <div class="section-heading text-center m-0">웹 서버의 동작 방식</div>
+              <div class="work__main">
+                <div class="work__main__frame">
+                  <div>
+                    <p style="margin: 0; text-align: center; font-weight: bold; font-size: 1.5rem">
+                      클라이언트
+                    </p>
+                    <img src="assets/img/browser.png" alt="" />
+                  </div>
+                  <div>
+                    <div class="right arrow requestArrow">
+                      <div class="arrow-tail"></div>
+                      <div class="arrow-head"></div>
+                    </div>
+                    <div class="left arrow responseArrow">
+                      <div class="arrow-head"></div>
+                      <div class="arrow-tail"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p style="margin: 0; text-align: center; font-weight: bold; font-size: 1.5rem">
+                      웹 서버
+                    </p>
+                    <img src="assets/img/server_icon.png" alt="" />
+                  </div>
+                  <div>
+                    <p style="margin: 0; text-align: center; font-weight: bold; font-size: 1.25rem">
+                      동적 컨텐츠
+                    </p>
+                    <div class="right arrow">
+                      <div class="arrow-tail"></div>
+                      <div class="arrow-head"></div>
+                    </div>
+                    <div class="left arrow">
+                      <div class="arrow-head"></div>
+                      <div class="arrow-tail"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="m-0 text-center">WAS</p>
+                    <p class="m-0 text-center">(웹 애플리케이션 서버)</p>
+                  </div>
+                  <div>
+                    <p class="m-0 text-center">웹 서버 내 정적인 컨텐츠</p>
+                    <p class="m-0 text-center">
+                      HTML 파일, CSS 파일, JavaScript 파일, 이미지 파일, ...
+                    </p>
+                  </div>
+                </div>
+                <ul class="work__action">
+                  <li class="" id="request">
+                    <p class="m-1 number">1</p>
+                    <p class="m-0">요청(Request)</p>
+                  </li>
+                  <li class="" id="analysis">
+                    <p class="m-1 number">2</p>
+                    <p class="m-0">요청 분석</p>
+                  </li>
+                  <li class="" id="processing">
+                    <p class="m-1 number">3</p>
+                    <p class="m-0">요청 처리</p>
+                  </li>
+                  <li class="" id="creation">
+                    <p class="m-1 number">4</p>
+                    <p class="m-0">HTTP 응답 생성</p>
+                  </li>
+                  <li class="" id="response">
+                    <p class="m-1 number">5</p>
+                    <p class="m-0">응답(Response)</p>
+                  </li>
+                </ul>
+                <div class="work__description on"></div>
+              </div>
+            </div>
+            <div class="container position-relative share">
+              <div class="section-heading text-center">웹 서버 점유율</div>
+              <!-- Nginx -->
+              <div class="share-container display-flex text-center gap-5">
+                <div class="share-img">
+                  <img src="assets/img/Nginx-logo.png" alt="nginx" />
+                </div>
+                <div class="share-2021">
+                  <p>35%</p>
+                  <p>2021</p>
+                </div>
+                <div class="share-2022">
+                  <p>31%</p>
+                  <p>2022</p>
+                </div>
+                <div class="share-2023">
+                  <p>26%</p>
+                  <p>2023</p>
+                </div>
+              </div>
+              <!-- Apache -->
+              <div class="share-container display-flex text-center gap-5">
+                <div class="share-img">
+                  <img src="assets/img/apache-logo.png" alt="apache" />
+                </div>
+                <div class="share-2021">
+                  <p>26%</p>
+                  <p>2021</p>
+                </div>
+                <div class="share-2022">
+                  <p>23%</p>
+                  <p>2022</p>
+                </div>
+                <div class="share-2023">
+                  <p>21%</p>
+                  <p>2023</p>
+                </div>
+              </div>
+              <!-- Cloundflare -->
+              <div class="share-container display-flex text-center gap-5">
+                <div class="share-img">
+                  <img src="assets/img/Cloudflare-logo.svg.png" alt="Cloundflare" />
+                </div>
+                <div class="share-2021">
+                  <p>4%</p>
+                  <p>2021</p>
+                </div>
+                <div class="share-2022">
+                  <p>5%</p>
+                  <p>2022</p>
+                </div>
+                <div class="share-2023">
+                  <p>10%</p>
+                  <p>2023</p>
+                </div>
+              </div>
+              <!-- OpenResty -->
+              <div class="share-container display-flex text-center gap-5">
+                <div class="share-img">
+                  <img src="assets/img/OpenResty-logo.png" alt="OpenResty" />
+                </div>
+                <div class="share-2021">
+                  <p>7%</p>
+                  <p>2021</p>
+                </div>
+                <div class="share-2022">
+                  <p>8%</p>
+                  <p>2022</p>
+                </div>
+                <div class="share-2023">
+                  <p>8%</p>
+                  <p>2023</p>
+                </div>
+              </div>
+              <!-- IIS -->
+              <div class="share-container display-flex text-center gap-5">
+                <div class="share-img">
+                  <img src="assets/img/IIS-logo.png" alt="IIS" />
+                </div>
+                <div class="share-2021">
+                  <p>6%</p>
+                  <p>2021</p>
+                </div>
+                <div class="share-2022">
+                  <p>4%</p>
+                  <p>2022</p>
+                </div>
+                <div class="share-2023">
+                  <p>2%</p>
+                  <p>2023</p>
+                </div>
+              </div>
+              <a
+                href="https://news.netcraft.com/archives/2023/03/23/march-2023-web-server-survey.html"
+                target="_blank"
+                class="source fs-5 d-flex m-0 justify-content-center"
+              >
+                <p>March 2023 Web Server Survey - Netcraft제공</p>
+              </a>
+              <a href=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Footer-->
+    <footer class="border-top">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <div class="small text-center text-muted fst-italic">
+              Copyright &copy; 리눅스 서버 운영 프로젝트 2023
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script defer>
+      document.body.style.zoom = 1 / 1.2;
+    </script>
+  </body>
+</html>

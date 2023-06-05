@@ -1,0 +1,299 @@
+:root {
+  --color-right-arrow: rgb(245, 55, 55);
+  --color-left-arrow: rgb(114, 140, 244);
+}
+
+.display-flex {
+  display: flex;
+}
+.inner-box {
+  box-shadow: 0px 9px 9px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  background-color: white;
+  padding: 24px;
+  width: 50%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 웹 서버의 구분 */
+.division > div > .inner-box:nth-child(2) {
+  justify-content: space-evenly;
+}
+.inner-box > .img {
+  max-width: 3;
+}
+.division > div > .inner-box:nth-child(1) > .img {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  background: url('../assets/img/webserver.png') center/cover no-repeat;
+}
+.division > div > .inner-box:nth-child(2) .img:nth-child(1) {
+  width: 200px;
+  height: 100px;
+  background-color: black;
+  background: url('../assets/img/apache-logo.png') center/cover no-repeat;
+}
+
+.division > div > .inner-box:nth-child(2) .img:nth-child(2) {
+  width: 200px;
+  height: 100px;
+  background-color: black;
+  background: url('../assets/img/Nginx-logo.png') center/cover no-repeat;
+}
+.division > div > .inner-box:hover {
+  transform: scale(1.05);
+}
+/* 웹 서버의 기능 */
+.function {
+  margin-bottom: 24px;
+}
+.function > .section-place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fuction-text {
+  width: 80%;
+}
+.fuction-number {
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: #e1e1e1;
+}
+.description {
+  list-style: circle;
+  font-size: 1.25rem;
+  line-height: 48px;
+}
+.fuction-text:hover .fuction-number {
+  background-color: rgb(23, 171, 23);
+  color: white;
+}
+
+/* 웹 서버 동작 방식 */
+.work {
+  box-shadow: 0px 9px 9px 5px rgba(0, 0, 0, 0.3);
+  background-color: rgb(24, 24, 77);
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+}
+.work__main {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-gap: 20px;
+  grid-template-columns: auto;
+}
+.work__main__frame {
+  padding: 48px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 0.5fr);
+}
+.work__main__frame > div:nth-child(1) {
+  grid-row: 1 / 3;
+}
+.work__main__frame > div:nth-child(1) > img {
+  width: 100%;
+  height: 100%;
+}
+.work__main__frame > div:nth-child(2) {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.work__main__frame > div:nth-child(3) {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.work__main__frame > div:nth-child(3) > img {
+  width: 100%;
+  height: 100%;
+}
+.work__main__frame > div:nth-child(4) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.work__main__frame > div:nth-child(5) {
+  border: 1px solid white;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.work__main__frame > div:nth-child(6) {
+  grid-column: 4/6;
+  border: 1px solid white;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+}
+.work__main__frame > div:nth-child(6) p:nth-child(1) {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.work__action {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+}
+.number {
+  background-color: rgb(77, 96, 133);
+  width: 48px;
+  border-radius: 10px;
+  text-align: center;
+}
+.work__action .on .number {
+  background-color: rgb(23, 171, 23);
+}
+.work__action .on {
+  background-color: rgb(55, 55, 119);
+}
+.work__action li {
+  cursor: pointer;
+  width: 20%;
+  height: 80%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+.work__description {
+  display: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 32px;
+  padding: 18px;
+  color: black;
+  font-size: 1.5rem;
+}
+
+/* 웹 서버 점유율 */
+.share > div {
+  margin: 48px 0;
+}
+.share-container {
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 0px 9px 9px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  background-color: white;
+  padding: 12px;
+  width: 100%;
+  height: 200px;
+}
+.share-container:nth-child(odd) {
+  background-color: rgb(245, 245, 245);
+}
+.share-img {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.share-container img {
+  width: 80%;
+  height: 80%;
+}
+.share-2021 {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.share-2021 p:nth-child(2) {
+  font-size: 1rem;
+}
+.share-2022 {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.share-2022 p:nth-child(2) {
+  font-size: 1rem;
+}
+.share-2023 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+.share-2023 p:nth-child(2) {
+  font-size: 1.2rem;
+}
+
+/* 화살표 */
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 116px;
+}
+.right .arrow-head {
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-left: 16px solid var(--color-right-arrow);
+}
+.right .arrow-tail {
+  width: 100px;
+  height: 8px;
+  border-radius: 8px 0 0 8px;
+  background-color: var(--color-right-arrow);
+}
+.left .arrow-head {
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-right: 16px solid var(--color-left-arrow);
+}
+.left .arrow-tail {
+  width: 100px;
+  height: 8px;
+  background-color: var(--color-left-arrow);
+  border-radius: 0 8px 8px 0;
+}
+.arrow.right.on {
+  animation: arrow-right 600ms infinite;
+}
+@keyframes arrow-right {
+  0% {
+    left: -10px;
+  }
+  100% {
+    left: 30px;
+  }
+}
+.arrow.left.on {
+  animation: arrow-left 600ms infinite;
+}
+@keyframes arrow-left {
+  0% {
+    left: 50px;
+  }
+  100% {
+    left: -10px;
+  }
+}
